@@ -107,12 +107,12 @@ class PokemonBinaryTree(BinaryTree):
             __inorden_nombre(self.root)
 
 
-# Inicializar los árboles
+# Inicializo los árboles
 arbol_pokemons_por_nombre = PokemonBinaryTree()
 arbol_pokemons_por_numero = PokemonBinaryTree()
 arbol_pokemons_por_tipo = PokemonBinaryTree()
 
-# Lista de Pokémon inventados
+# Lista inventada
 pokemons = [
     Pokemon("Bulbasaur", 1, ["Planta", "Veneno"]),
     Pokemon("Charmander", 2, ["Fuego"]),
@@ -127,14 +127,14 @@ pokemons = [
     Pokemon("Tyrantrum", 11, ["Roca", "Dragón"]),
 ]
 
-# Insertar Pokémon en los árboles
+
 for pokemon in pokemons:
     arbol_pokemons_por_nombre.insert_node(pokemon)
     arbol_pokemons_por_numero.insert_node(pokemon)
     for tipo in pokemon.tipos:
         arbol_pokemons_por_tipo.insert_node(pokemon)
 
-# a) Mostrar todos los datos de un Pokémon a partir de su número y nombre
+# a) Mostrar todos los datos de un Pokemon a partir de su numero y nombre
 def mostrar_datos_pokemon(nombre, numero):
     pokemon_by_name = arbol_pokemons_por_nombre.search(nombre)
     pokemon_by_number = arbol_pokemons_por_numero.search_by_number(numero)
@@ -148,7 +148,7 @@ def mostrar_pokemons_por_tipo(tipo):
     print(f"Pokémon de tipo {tipo}:")
     arbol_pokemons_por_tipo.list_by_type(tipo)
 
-# c) Listado en orden ascendente por número
+# c) Listado en orden ascendente por numero
 def listado_por_numero():
     print("Listado de Pokémon por número:")
     arbol_pokemons_por_numero.inorden_numero()
@@ -158,7 +158,7 @@ def listado_por_nombre():
     print("Listado de Pokémon por nombre:")
     arbol_pokemons_por_nombre.inorden_nombre()
 
-# e) Mostrar datos específicos de ciertos Pokémon
+# e) Mostrar datos específicos de ciertos Pokemon
 def mostrar_datos_especificos():
     nombres_especificos = ["Jolteon", "Lycanroc", "Tyrantrum"]
     print("Datos específicos de Pokémon:")
@@ -167,7 +167,7 @@ def mostrar_datos_especificos():
         if pokemon:
             print(f"Datos de {pokemon.other_value.nombre}: {pokemon.other_value.tipos}")
 
-# f) Contar Pokémon de tipos específicos
+# f) Contar Pokemon de tipos específicos
 def contar_pokemons_por_tipo(tipo):
     count = 0
     def __contar(root):
