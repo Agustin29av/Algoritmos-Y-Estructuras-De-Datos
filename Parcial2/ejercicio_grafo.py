@@ -66,7 +66,7 @@ class Graph:
         return min_tree, contiene_yoda
 
     def max_episodios_compartidos(self):
-        # Buscamos el máximo de episodios compartidos entre personajes
+        # Busco el máximo de episodios compartidos entre personajes
         max_episodios = 0
         personajes = None
         for nodo in self.elements:
